@@ -172,37 +172,32 @@
     <h4>Examples:</h4>
 
     <ul class="examples">
-      <li>
-        Get all articles <br />
-        <code class="get">GET</code>
-        <a href="/rest/articles"><code>/rest/articles</code></a>
+      <li data-url="/rest/articles" data-method="GET">
+        Get all articles
       </li>
-      <li>
-        Create a new article <br />
-        <code class="post">POST</code>
-        <a href="/rest/articles"><code>/rest/articles</code></a> <br />
-        <code>
-          Body { "title": "New article via REST" }
-        </code>
+
+      <li
+        data-url="/rest/articles"
+        data-method="POST"
+        data-body='{ "title": "New article via REST" }'
+      >
+        Create a new article
       </li>
-      <li>
-        Get an article by ID <br />
-        <code class="get">GET</code>
-        <a href="/rest/articles/11"><code>/rest/articles/11</code></a>
+
+      <li data-url="/rest/articles/11" data-method="GET">
+        Get an article by ID
       </li>
-      <li>
-        Update an article by ID <br />
-        <code class="put">PUT</code>
-        <a href="/rest/articles/11"><code>/rest/articles/11</code></a
-        ><br />
-        <code>
-          Body { "title": "Modified article title" }
-        </code>
+
+      <li
+        data-url="/rest/articles/11"
+        data-method="PUT"
+        data-body='{ "title": "Modified article title" }'
+      >
+        Update an article by ID
       </li>
-      <li>
-        Remove an article by ID <br />
-        <code class="delete">DELETE</code>
-        <a href="/rest/articles/11"><code>/rest/articles/11</code></a>
+
+      <li data-url="/rest/articles/11" data-method="DELETE" data-body="">
+        Remove an article by ID
       </li>
     </ul>
 
@@ -217,38 +212,32 @@
     <h4>Examples:</h4>
 
     <ul class="examples">
-      <li>
-        Get all articles <br />
-        <code class="get">GET</code>
-        <a href="/shortrest/articles"><code>/shortrest/articles</code></a>
+      <li data-url="/shortrest/articles" data-method="GET">
+        Get all articles
       </li>
-      <li>
-        Create a new article <br />
-        <code class="post">POST</code>
-        <a href="/shortrest/articles"><code>/shortrest/articles</code></a>
-        <br />
-        <code>
-          Body { "title": "New article via REST" }
-        </code>
+
+      <li
+        data-url="/shortrest/articles"
+        data-method="POST"
+        data-body='{ "title": "New article via REST" }'
+      >
+        Create a new article
       </li>
-      <li>
-        Get an article by ID <br />
-        <code class="get">GET</code>
-        <a href="/shortrest/articles/11"><code>/shortrest/articles/11</code></a>
+
+      <li data-url="/shortrest/articles/11" data-method="GET">
+        Get an article by ID
       </li>
-      <li>
-        Update an article by ID <br />
-        <code class="put">PUT</code>
-        <a href="/shortrest/articles/11"><code>/shortrest/articles/11</code></a
-        ><br />
-        <code>
-          Body { "title": "Modified article title" }
-        </code>
+
+      <li
+        data-url="/shortrest/articles/11"
+        data-method="PUT"
+        data-body='{ "title": "Modified article title" }'
+      >
+        Update an article by ID
       </li>
-      <li>
-        Remove an article by ID <br />
-        <code class="delete">DELETE</code>
-        <a href="/shortrest/articles/11"><code>/shortrest/articles/11</code></a>
+
+      <li data-url="/shortrest/articles/11" data-method="DELETE" data-body="">
+        Remove an article by ID
       </li>
     </ul>
 
@@ -270,19 +259,11 @@
     <h4>Examples:</h4>
 
     <ul class="examples">
-      <li>
-        Greeter Hello <br />
-        <code class="get">GET</code>
-        <a href="/whitelist/v1/greeter/hello"
-          ><code>/whitelist/v1/greeter/hello</code></a
-        >
+      <li data-url="/whitelist/v1/greeter/hello" data-method="GET">
+        Greeter Moleculer
       </li>
-      <li>
-        Add two numbers <br />
-        <code class="get">GET</code>
-        <a href="/whitelist/math/add?a=25&b=13"
-          ><code>/whitelist/math/add?a=25&b=13</code></a
-        >
+      <li data-url="/whitelist/math/add?a=25&b=13" data-method="GET">
+        Add two numbers
       </li>
     </ul>
 
@@ -292,6 +273,29 @@
         >https://moleculer.services/docs/0.13/moleculer-web.html#Whitelist</a
       >
     </p>
+
+    <h2>Custom Functions</h2>
+
+    <ul class="examples">
+      <li>Access custom functions through <b>'/custom'</b> route.</li>
+      <li>Uses custom functions within the declaration of aliases.</li>
+    </ul>
+
+    <h4>Examples:</h4>
+
+    <ul>
+      <li data-url="/custom/useragent" data-method="GET">
+        Get User Agent
+      </li>
+    </ul>
+
+    <p>
+      Official Documentation: <br /><a
+        href="https://moleculer.services/docs/0.13/moleculer-web.html#Aliases"
+        >https://moleculer.services/docs/0.13/moleculer-web.html#Aliases</a
+      >
+    </p>
+
     <script>
       $(document).ready(function() {
         $("li[data-url]").each(function(i, item) {
