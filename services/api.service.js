@@ -241,11 +241,34 @@ module.exports = {
 
         whitelist: [
           // Access 'hello' action in 'greeter' service
-          "greeter.hello",
+          "v1.greeter.hello",
 
           // Access any actions in 'math' service
           /^math\.\w+$/
         ]
+      },
+
+      {
+        // Access custom functions through the /custom route:
+        // https://leyf6.sse.codesandbox.io/custom
+        path: "/custom",
+
+        /**
+         * This route uses custom functions within the declaration of aliases.
+         *
+         * Example:
+         *
+         *  - Get all articles
+         * 		GET https://leyf6.sse.codesandbox.io/custom/useragent
+         *
+         */
+
+        aliases: {
+          "GET useragent"(req, res) {
+            res.writeHead(200);
+            res.end(req.headers["user-agent"]);
+          }
+        }
       }
     ],
 
