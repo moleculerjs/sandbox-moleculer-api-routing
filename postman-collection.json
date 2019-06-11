@@ -1,0 +1,507 @@
+{
+	"info": {
+		"_postman_id": "93facccc-a800-4054-b4e6-e380c14b460a",
+		"name": "moleculer-rest-example",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Simple.Math.Add",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"url": {
+					"raw": "https://le6lg.sse.codesandbox.io/simple/math/add?a=1&b=1",
+					"protocol": "https",
+					"host": [
+						"le6lg",
+						"sse",
+						"codesandbox",
+						"io"
+					],
+					"path": [
+						"simple",
+						"math",
+						"add"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": "1"
+						},
+						{
+							"key": "b",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Simple.Math.Sub",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"url": {
+					"raw": "https://le6lg.sse.codesandbox.io/simple/math/sub?a=1&b=1",
+					"protocol": "https",
+					"host": [
+						"le6lg",
+						"sse",
+						"codesandbox",
+						"io"
+					],
+					"path": [
+						"simple",
+						"math",
+						"sub"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": "1"
+						},
+						{
+							"key": "b",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Simple.Math.Mult",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"url": {
+					"raw": "https://le6lg.sse.codesandbox.io/simple/math/mult?a=2&b=2",
+					"protocol": "https",
+					"host": [
+						"le6lg",
+						"sse",
+						"codesandbox",
+						"io"
+					],
+					"path": [
+						"simple",
+						"math",
+						"mult"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": "2"
+						},
+						{
+							"key": "b",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Simple.Math.Div",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"url": {
+					"raw": "https://le6lg.sse.codesandbox.io/simple/math/div?a=2&b=2",
+					"protocol": "https",
+					"host": [
+						"le6lg",
+						"sse",
+						"codesandbox",
+						"io"
+					],
+					"path": [
+						"simple",
+						"math",
+						"div"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": "2"
+						},
+						{
+							"key": "b",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Auto.Users.List",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://le6lg.sse.codesandbox.io/autoalias/users",
+					"protocol": "https",
+					"host": [
+						"le6lg",
+						"sse",
+						"codesandbox",
+						"io"
+					],
+					"path": [
+						"autoalias",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AutoUsers.Get",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"url": {
+					"raw": "https://le6lg.sse.codesandbox.io/autoalias/users/1",
+					"protocol": "https",
+					"host": [
+						"le6lg",
+						"sse",
+						"codesandbox",
+						"io"
+					],
+					"path": [
+						"autoalias",
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Auto.Users.Create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"name\" : \"Razvan Daniel Predescu\"\r\n}"
+				},
+				"url": {
+					"raw": "https://le6lg.sse.codesandbox.io/autoalias/users",
+					"protocol": "https",
+					"host": [
+						"le6lg",
+						"sse",
+						"codesandbox",
+						"io"
+					],
+					"path": [
+						"autoalias",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Auto.Users.Update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Razvan Predescu",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://le6lg.sse.codesandbox.io/autoalias/users/1",
+					"protocol": "https",
+					"host": [
+						"le6lg",
+						"sse",
+						"codesandbox",
+						"io"
+					],
+					"path": [
+						"autoalias",
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Auto.Users.Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Razvan Predescu",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://le6lg.sse.codesandbox.io/autoalias/users/1",
+					"protocol": "https",
+					"host": [
+						"le6lg",
+						"sse",
+						"codesandbox",
+						"io"
+					],
+					"path": [
+						"autoalias",
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Short.Articles.List",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://le6lg.sse.codesandbox.io/shortrest/articles",
+					"protocol": "https",
+					"host": [
+						"le6lg",
+						"sse",
+						"codesandbox",
+						"io"
+					],
+					"path": [
+						"shortrest",
+						"articles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Short.Articles.Get",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"url": {
+					"raw": "https://le6lg.sse.codesandbox.io/shortrest/articles/1",
+					"protocol": "https",
+					"host": [
+						"le6lg",
+						"sse",
+						"codesandbox",
+						"io"
+					],
+					"path": [
+						"shortrest",
+						"articles",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Short.Articles.Update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "title",
+							"value": "Moleculer Introduction",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://le6lg.sse.codesandbox.io/shortrest/articles/1",
+					"protocol": "https",
+					"host": [
+						"le6lg",
+						"sse",
+						"codesandbox",
+						"io"
+					],
+					"path": [
+						"shortrest",
+						"articles",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Short.Articles.Create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"title\" : \"Moleculer introduction\"\r\n}"
+				},
+				"url": {
+					"raw": "https://le6lg.sse.codesandbox.io/shortrest/articles",
+					"protocol": "https",
+					"host": [
+						"le6lg",
+						"sse",
+						"codesandbox",
+						"io"
+					],
+					"path": [
+						"shortrest",
+						"articles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Short.Articles.Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"title\" : \"Moleculer introduction\"\r\n}"
+				},
+				"url": {
+					"raw": "https://le6lg.sse.codesandbox.io/shortrest/articles/1",
+					"protocol": "https",
+					"host": [
+						"le6lg",
+						"sse",
+						"codesandbox",
+						"io"
+					],
+					"path": [
+						"shortrest",
+						"articles",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

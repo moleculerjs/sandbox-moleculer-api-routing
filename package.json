@@ -1,0 +1,18 @@
+{
+  "name": "moleculer-api-routing",
+  "version": "1.0.1",
+  "description": "Moleculer routing examples",
+  "main": "services/greeter.service.js",
+  "scripts": {
+    "start": "nodemon --exec node_modules/moleculer/bin/moleculer-runner.js services"
+  },
+  "dependencies": {
+    "moleculer": "0.13.9",
+    "moleculer-web": "^0.9.0-beta2",
+    "nats": "1.2.10"
+  },
+  "devDependencies": {
+    "nodemon": "1.18.4"
+  },
+  "keywords": []
+}

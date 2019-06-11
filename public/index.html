@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Moleculer Routing Examples</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700&display=swap&subset=latin-ext"
+      rel="stylesheet"
+    />
+    <style>
+      html,
+      body {
+        font-family: "Ubuntu", sans-serif;
+      }
+
+      h2 {
+        margin-top: 2em;
+      }
+
+      li {
+        margin-top: 4px;
+        margin-bottom: 4px;
+      }
+
+      ul.examples li {
+        margin-bottom: 1em;
+      }
+
+      .get {
+        color: green;
+        font-weight: bold;
+      }
+
+      .post {
+        color: orange;
+        font-weight: bold;
+      }
+
+      .put {
+        color: blue;
+        font-weight: bold;
+      }
+
+      .delete {
+        color: red;
+        font-weight: bold;
+      }
+
+      .response {
+        padding: 0.5em;
+        background-color: lightgrey;
+        margin-top: 0.5em;
+        display: none;
+      }
+
+      .response.error {
+        background-color: #f1c2c2;
+      }
+
+      code.body {
+        display: block;
+      }
+    </style>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <h1>Moleculer Routing Examples</h1>
+
+    <p>
+      Routing examples from Moleculer Web Examples repository: <br />
+      <a
+        href="https://github.com/moleculerjs/moleculer-web/tree/master/examples"
+        >https://github.com/moleculerjs/moleculer-web/tree/master/examples</a
+      >
+    </p>
+
+    <h2>Default Route Settings</h2>
+
+    <ul>
+      <li>Access to all services through the <b>'/simple'</b>route.</li>
+      <li>Uses API Gateway service with default settings.</li>
+      <li>Access greeter.*, math.* & internal $node.* actions.</li>
+    </ul>
+
+    <h4>Examples:</h4>
+
+    <ul class="examples">
+      <li data-url="/simple/v1/greeter/hello" data-method="GET">
+        Greeter Moleculer
+      </li>
+      <li data-url="/simple/math/add?a=25&b=13" data-method="GET">
+        Add two numbers
+      </li>
+      <li data-url="/simple/~node/health" data-method="GET">
+        Get health info
+      </li>
+      <li data-url="/simple/~node/actions" data-method="GET">
+        List of actions
+      </li>
+      <li data-url="/simple/not/found" data-method="GET">
+        Call a non-existing service.
+      </li>
+      <li data-url="/simple/math/mult?a=5&b=John" data-method="GET">
+        Validation error
+      </li>
+    </ul>
+
+    <p>
+      Official Documentation: <br /><a
+        href="https://moleculer.services/docs/0.13/moleculer-web.html#Aliases"
+        >https://moleculer.services/docs/0.13/moleculer-web.html#Aliases</a
+      >
+    </p>
+
+    <h2>Auto-aliases generator</h2>
+
+    <ul class="examples">
+      <li>Access to all services through the <b>'/autoalias'</b> route.</li>
+      <li>Uses API Gateway service auto-aliases generator feature</li>
+      <li>You don't need to create aliases for your actions.</li>
+      <li>It collects & read from action definitions & build aliases.</li>
+    </ul>
+
+    <h4>Examples:</h4>
+
+    <ul>
+      <li data-url="/autoalias/users" data-method="GET">
+        Get all users
+      </li>
+      <li
+        data-url="/autoalias/users"
+        data-method="POST"
+        data-body='{ "name": "Razvan Predescu" }'
+      >
+        Create a new user
+      </li>
+      <li data-url="/autoalias/users/11" data-method="GET">
+        Get an user by ID
+      </li>
+      <li
+        data-url="/autoalias/users/11"
+        data-method="PUT"
+        data-body='{ "name": "Updated User Name" }'
+      >
+        Update an user by ID
+      </li>
+      <li data-url="/autoalias/users/11" data-method="DELETE" data-body="">
+        Remove an user by ID
+      </li>
+    </ul>
+
+    <p>
+      Official Documentation: <br /><a
+        href="https://moleculer.services/docs/0.13/moleculer-web.html#Aliases"
+        >https://moleculer.services/docs/0.13/moleculer-web.html#Aliases</a
+      >
+    </p>
+
+    <h2>REST aliases</h2>
+
+    <ul>
+      <li>This route uses API Gateway as a RESTful API server</li>
+      <li>Access 'articles' service through the <b>'/rest'</b> route.</li>
+    </ul>
+
+    <h4>Examples:</h4>
+
+    <ul class="examples">
+      <li>
+        Get all articles <br />
+        <code class="get">GET</code>
+        <a href="/rest/articles"><code>/rest/articles</code></a>
+      </li>
+      <li>
+        Create a new article <br />
+        <code class="post">POST</code>
+        <a href="/rest/articles"><code>/rest/articles</code></a> <br />
+        <code>
+          Body { "title": "New article via REST" }
+        </code>
+      </li>
+      <li>
+        Get an article by ID <br />
+        <code class="get">GET</code>
+        <a href="/rest/articles/11"><code>/rest/articles/11</code></a>
+      </li>
+      <li>
+        Update an article by ID <br />
+        <code class="put">PUT</code>
+        <a href="/rest/articles/11"><code>/rest/articles/11</code></a
+        ><br />
+        <code>
+          Body { "title": "Modified article title" }
+        </code>
+      </li>
+      <li>
+        Remove an article by ID <br />
+        <code class="delete">DELETE</code>
+        <a href="/rest/articles/11"><code>/rest/articles/11</code></a>
+      </li>
+    </ul>
+
+    <h2>Shorthand RESTful aliases</h2>
+
+    <ul>
+      <li>Shorthand RESTful aliases</li>
+      <li>Access 'articles' service through the <b>'/shortrest'</b> route.</li>
+      <li>Disable direct URLs (`/articles/list` or `/articles.list`)</li>
+    </ul>
+
+    <h4>Examples:</h4>
+
+    <ul class="examples">
+      <li>
+        Get all articles <br />
+        <code class="get">GET</code>
+        <a href="/shortrest/articles"><code>/shortrest/articles</code></a>
+      </li>
+      <li>
+        Create a new article <br />
+        <code class="post">POST</code>
+        <a href="/shortrest/articles"><code>/shortrest/articles</code></a>
+        <br />
+        <code>
+          Body { "title": "New article via REST" }
+        </code>
+      </li>
+      <li>
+        Get an article by ID <br />
+        <code class="get">GET</code>
+        <a href="/shortrest/articles/11"><code>/shortrest/articles/11</code></a>
+      </li>
+      <li>
+        Update an article by ID <br />
+        <code class="put">PUT</code>
+        <a href="/shortrest/articles/11"><code>/shortrest/articles/11</code></a
+        ><br />
+        <code>
+          Body { "title": "Modified article title" }
+        </code>
+      </li>
+      <li>
+        Remove an article by ID <br />
+        <code class="delete">DELETE</code>
+        <a href="/shortrest/articles/11"><code>/shortrest/articles/11</code></a>
+      </li>
+    </ul>
+
+    <p>
+      Official Documentation: <br /><a
+        href="https://moleculer.services/docs/0.13/moleculer-web.html#Aliases"
+        >https://moleculer.services/docs/0.13/moleculer-web.html#Aliases</a
+      >
+    </p>
+
+    <h2>Route Whitelisting</h2>
+
+    <ul>
+      <li>Access to all services through the <b>'/whitelist'</b>route.</li>
+      <li>Provides access to certain services & actions</li>
+      <li>Services and actions outside the whitelist are not accessible.</li>
+    </ul>
+
+    <h4>Examples:</h4>
+
+    <ul class="examples">
+      <li>
+        Greeter Hello <br />
+        <code class="get">GET</code>
+        <a href="/whitelist/v1/greeter/hello"
+          ><code>/whitelist/v1/greeter/hello</code></a
+        >
+      </li>
+      <li>
+        Add two numbers <br />
+        <code class="get">GET</code>
+        <a href="/whitelist/math/add?a=25&b=13"
+          ><code>/whitelist/math/add?a=25&b=13</code></a
+        >
+      </li>
+    </ul>
+
+    <p>
+      Official Documentation: <br /><a
+        href="https://moleculer.services/docs/0.13/moleculer-web.html#Whitelist"
+        >https://moleculer.services/docs/0.13/moleculer-web.html#Whitelist</a
+      >
+    </p>
+    <script>
+      $(document).ready(function() {
+        $("li[data-url]").each(function(i, item) {
+          const itemData = $(item).data();
+          $(item)
+            .append([
+              $("<br/>"),
+              $("<code></code>")
+                .addClass(itemData.method.toLowerCase())
+                .text(itemData.method + " "),
+              $("<a></a>")
+                .attr("href", itemData.url)
+                .append("<code>" + itemData.url + "</code>"),
+              itemData.body
+                ? $(
+                    "<code class='body'>Body " +
+                      JSON.stringify(itemData.body, null, 4) +
+                      "</code>"
+                  )
+                : null
+            ])
+            .append("<div class='response'><pre><code></code></pre></div>")
+
+            .find("a")
+            .attr("href", "#")
+            .on("click", function() {
+              //console.log(itemData);
+              var method = (itemData.method || "GET").toLowerCase();
+              axios({
+                method: method,
+                url: itemData.url,
+                data: itemData.body
+              })
+                .then(function(res) {
+                  console.log("Response", res.data);
+                  $(item)
+                    .find(".response")
+                    .addClass("success")
+                    .find("code")
+                    .text(JSON.stringify(res.data, null, 4));
+
+                  $(item)
+                    .find(".response")
+                    .show();
+                })
+                .catch(function(err) {
+                  console.error("Error", err);
+                  $(item)
+                    .find(".response")
+                    .addClass("error")
+                    .find("code")
+                    .text(
+                      (err.response
+                        ? "Status: " +
+                          err.response.status +
+                          " " +
+                          err.response.statusText +
+                          "\n\n"
+                        : "") +
+                        JSON.stringify(
+                          err.response ? err.response.data : err,
+                          null,
+                          4
+                        )
+                    );
+
+                  $(item)
+                    .find(".response")
+                    .show();
+                });
+
+              return false;
+            });
+        });
+      });
+    </script>
+  </body>
+</html>
