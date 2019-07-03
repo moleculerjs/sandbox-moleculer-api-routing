@@ -4,10 +4,12 @@
   "description": "Moleculer routing examples",
   "main": "services/greeter.service.js",
   "scripts": {
-    "start": "nodemon --exec node_modules/moleculer/bin/moleculer-runner.js services"
+    "start": "nodemon --exec node_modules/moleculer/bin/moleculer-runner.js services",
+    "dev": "moleculer-runner --repl --hot services"
   },
   "dependencies": {
     "moleculer": "0.13.9",
+    "moleculer-repl": "^0.5.7",
     "moleculer-web": "^0.9.0-beta2",
     "nats": "1.2.10"
   },
